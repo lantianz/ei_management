@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="../../static/css/admin-home.css" rel="stylesheet" th:href="@{~/css/admin-home.css}">
+    <link href="../../static/css/tailwind.min.css" rel="stylesheet" th:href="@{~/css/tailwind.min.css}">
+    <style>
+        html {
+            overflow: auto;
+        }
+    </style>
+    <title>毕业生信息表</title>
+</head>
+<body>
+<div class="m-8 w-360 mx-auto">
+    <label for="id"></label><input type="text" id="id" placeholder="请输入内容" class="box-border text-lg h-8 rounded-md border border-gray-300 text-gray-600 appearance-none block outline-none px-4">
+    <button onclick="locate()" class="bg-green-500 hover:shadow-md rounded-lg text-white py-2 px-4 text-center text-base mt-2 mb-2 transition duration-100 cursor-pointer">搜索</button>
+</div>
+<div id="failureMessage" style="display: none; color: red;">搜索失败，请尝试其他关键词。</div>
+<div id="main-content"></div>
+<script src="../../static/js/admin.main.js" th:src="@{~/js/admin.main.js}"></script>
+<script th:inline="javascript">
+    let highlightedCells = [];
+
+    function locate() {
+        const id = document.getElementById("id").value;
+        const table = document.getElementById("table"); // 获取表格元素
+        const rows = table.getElementsByTagName("tr"); // 获取所有行
+
+        // 取消上次高亮显示的单元格
+        for (let i = 0; i < highlightedCells.length; i++) {
+            highlightedCells[i].style.backgroundColor = "";
+            highlightedCells[i].removeEventListener("click", unhighlight);
+        }
+        highlightedCells = [];
+        let isSuccess = false;
+        for (let i = 0; i < rows.length; i++) {
+            const cells = rows[i].getElementsByTagName("td"); // 获取当前行的所有单元格
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[j].innerHTML === id) { // 如果单元格内容匹配输入值
+                    isSuccess = true;
+                    cells[j].scrollIntoView({ behavior: "smooth" , block:"nearest"});
+                    cells[j].style.backgroundColor = "lightgreen"; // 可选：高亮显示匹配的单元格
+                    highlightedCells.push(cells[j]); // 将当前高亮显示的单元格添加到数组中
+                    cells[j].addEventListener("click", unhighlight); // 添加点击事件，用于取消高亮显示
+                }
+            }
+        }
+        if(isSuccess){
+            document.getElementById("failureMessage").style.display = "none";
+        }else{
+            document.getElementById("failureMessage").style.display = "block";
+        }
+    }
+    function unhighlight(event) {
+        const cell = event.target;
+        cell.style.backgroundColor = ""; // 取消高亮显示的单元格
+        cell.removeEventListener("click", unhighlight); // 移除点击事件
+        const index = highlightedCells.indexOf(cell);
+        if (index !== -1) {
+            highlightedCells.splice(index, 1); // 从数组中移除取消高亮的单元格
+        }
+    }
+
+
+    let data;
+    data = [[${graduates}]];
+    Table("main-content");
+</script>
+</body>
+</html>

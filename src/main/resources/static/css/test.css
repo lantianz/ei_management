@@ -1,0 +1,33 @@
+table{
+    font-size:12px;
+    color:#333333;
+    width:100%;
+    border-width: 1px;
+    border-color: #9dcc7a;
+    border-collapse: collapse;
+}
+table th {
+    font-size:12px;
+    background-color:#abd28e;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #9dcc7a;
+    text-align:left;
+}
+table tr {
+    background-color:#ffffff;
+}
+table tr:hover {
+    background-color:#fffacd;
+}
+table td {
+    font-size:12px;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #9dcc7a;
+}
+table td:hover {
+    background-color:#ffff00;
+}

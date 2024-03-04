@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>毕业生就业信息管理系统</title>
+    <link href="../static/img/tile.png" rel="shortcut icon" th:href="@{~/img/tile.png}">
+    <link href="../static/css/user-style.css" rel="stylesheet" th:href="@{~/css/user-style.css}">
+</head>
+
+<body>
+<div>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" th:href="@{~/css/bootstrap.min.css}"/>
+    <link href="../static/css/magnific-popup.css" rel="stylesheet" th:href="@{~/css/magnific-popup.css}"/>
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet" th:href="@{~/css/font-awesome.min.css}"/>
+    <link href="../static/css/templatemo-style.css" rel="stylesheet" th:href="@{~/css/templatemo-style.css}"/>
+    <!-- MENU -->
+    <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html" th:href="@{/}">EI management</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-nav-first" id="header-nav">
+                    <li><a class="smoothScroll" href="#home">首页</a></li>
+                    <li><a class="smoothScroll" href="#about">关于</a></li>
+                    <li><a class="smoothScroll" href="#app">APP</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="section-btn"><a data-target="#modal-form" data-toggle="modal" href="#" id="header-lore">登
+                        录</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- HOME -->
+    <section data-stellar-background-ratio="0.5" id="home">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="home-info">
+                        <h1><span><b>毕业生就业信息管理系统</b></span></h1>
+                        <a class="btn section-btn smoothScroll" data-target="#modal-form" data-toggle="modal"
+                           href="#" id="home-lore"><b>登 录</b></a>
+                        <span>Student No. 202012301076<small>Designed by ltz.</small></span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="home-video">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <div class="home-video__img"><img alt="图片显示失败" class="c1791"
+                                                              id="inz43" src="../static/img/home-right.png"
+                                                              th:src="@{~/img/home-right.png}"/></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ABOUT -->
+    <section data-stellar-background-ratio="0.5" id="about">
+        <h2>系统关于</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-6">
+                    <div class="about-info">
+                        <p>该系统实现管理毕业生的基本信息和就业信息、管理各院系就业工作负责人的信息、
+                            对毕业生的就业情况的汇总与统计功能、就业相关资讯推送。后台角色分为 系统
+                            总管 理员和各院系就业工作负责人，负责不同的工作内容；</p>
+                        <p>系统提高了毕业生信息管理的效率和准确性，方便各级管理者进行毕业生
+                            就业情况的监管和分析，为毕业生提供更好的就业服务和指导。同时也有利于学校
+                            对毕业生就业情况进行综合评估和统计分析。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="about-info skill-thumb">
+                        <strong>Java</strong><span class="pull-right">25%</span>
+                        <div class="progress">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25"
+                                 class="progress-bar progress-bar-primary c10514" id="iw68n"
+                                 role="progressbar"></div>
+                        </div>
+                        <strong>HTML</strong><span class="pull-right">30%</span>
+                        <div class="progress">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="30"
+                                 class="progress-bar progress-bar-primary c10579" id="i72om"
+                                 role="progressbar"></div>
+                        </div>
+                        <strong>JavaScript</strong><span class="pull-right">20%</span>
+                        <div class="progress">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="20"
+                                 class="progress-bar progress-bar-primary c10642" id="ianobh"
+                                 role="progressbar"></div>
+                        </div>
+                        <strong>CSS</strong><span class="pull-right">25%</span>
+                        <div class="progress">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25"
+                                 class="progress-bar progress-bar-primary c10705" id="id5ed6"
+                                 role="progressbar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="about-image"><img alt="" class="img-responsive" src="../static/img/about-image.jpg"
+                                                  th:src="@{~/img/about-image.jpg}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- APP -->
+    <section data-stellar-background-ratio="0.5" id="app">
+        <h2>APP</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <a href="https://bing.com" target="_blank" th:href="'https'+':'+'//'+'bing.com'">
+                        <img alt="" class="app-qrcode"
+                             src="../static/img/app-image.jpg" th:src="@{~/img/app-image.jpg}"/>
+                        <h3 class="smoothScroll">点击跳转下载</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <div class="footer-thumb footer-info">
+                        <h2>EI_management</h2>
+                        <span>Copyright © 2023 Lan Tianzhi</span>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <div class="footer-thumb">
+                        <h2>链接</h2>
+                        <ul class="footer-link">
+                            <li><a class="smoothScroll" href="https://www.gxnu.edu.cn/" target="_blank"
+                                   th:href="'https'+':'+'//'+'www.gxnu.edu.cn'">广西师范大学官网</a></li>
+                            <li><a class="smoothScroll" href="https://bing.com" target="_blank"
+                                   th:href="'https'+':'+'//'+'bing.com'">必应搜索</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <div class="footer-thumb">
+                        <h2>&nbsp;</h2>
+                        <ul class="footer-link">
+                            <li><a class="smoothScroll" href="https://webvpn.gxnu.edu.cn/" target="_blank"
+                                   th:href="'https'+':'+'//'+'webvpn.gxnu.edu.cn'">GXNU WebVPN</a></li>
+                            <li><a class="smoothScroll" href="https://co2.cnki.net/login.html?dp=gxnu" target="_blank"
+                                   th:href="'https'+':'+'//'+'co2.cnki.net'+'/'+'login.html?dp=gxnu'">GXNU本科毕业论文管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <div class="footer-thumb">
+                        <h2>关于我</h2>
+                        <span>电话：(+86) 188-****-****<br/>邮箱：1437******@**.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- MODAL -->
+    <section aria-hidden="true" aria-labelledby="myModalLabel" class="modal fade" id="modal-form" role="dialog"
+             tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content modal-popup">
+                <div class="modal-header">
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
+                            aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="modal-title">
+                                    <h2>EI_management</h2>
+                                </div><!-- NAV TABS -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li>
+                                        <a aria-controls="sign_in" data-toggle="tab" role="tab">登录</a>
+                                    </li>
+                                </ul><!-- TAB PANES -->
+                                <div>
+                                    <div id="sign_in" role="tabpanel">
+                                        <form id="loginForm">
+                                            <label>
+                                                <input class="form-control" name="username" placeholder="账  号" required
+                                                       type="text" id="une"/>
+                                            </label>
+                                            <label>
+                                                <input class="form-control" name="password" placeholder="Password"
+                                                       required type="password" id="pwd"/>
+                                            </label>
+                                            <input class="form-control" name="submit" type="submit" value="提 交"/>
+                                            <a href="https://www.bing.com" id="form-forget">忘记密码?申请找回</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SCRIPTS -->
+    <script src="../static/js/jquery.js" th:src="@{~/js/jquery.js}"></script>
+    <script src="../static/js/bootstrap.min.js" th:src="@{~/js/bootstrap.min.js}"></script>
+    <script src="../static/js/jquery.stellar.min.js" th:src="@{~/js/jquery.stellar.min.js}"></script>
+    <script src="../static/js/jquery.magnific-popup.min.js" th:src="@{~/js/jquery.magnific-popup.min.js}"></script>
+    <script src="../static/js/smoothscroll.js" th:src="@{~/js/smoothscroll.js}"></script>
+    <script src="../static/js/custom.js" th:src="@{~/js/custom.js}"></script>
+    <script th:inline="javascript">
+        $(document).ready(function () {
+            $("#loginForm").submit(function (event) {
+                event.preventDefault();
+                const formData = $(this).serialize();
+                $.ajax({
+                    type: "POST",
+                    url: "admins/login",
+                    data: formData,
+                    success: function (data) {
+                        if (data.status === "success") {
+                            // 登录成功，跳转到admin-home页面
+                            window.location.href = 'admins/admin-home';
+                        } else {
+                            // 登录失败，停留在当前页面或跳转到index页面
+                            alert(data.message);
+                        }
+                    },
+                    error: function () {
+                        // 请求出错的处理逻辑
+                        console.log("请求出错");
+                    }
+                });
+            });
+        });
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>毕业生就业信息管理系统</title>
+    <link href="../static/img/tile.png" rel="shortcut icon" th:href="@{~/img/tile.png}">
+    <link href="../static/css/admin-home.css" rel="stylesheet" th:href="@{~/css/admin-home.css}">
+    <link href="../static/css/tailwind.min.css" rel="stylesheet" th:href="@{~/css/tailwind.min.css}">
+</head>
+<body>
+<header class="h-16 bg-green-500 flex justify-between items-center px-6 text-white">
+    <button id="menu-button"><iconpark-icon name="menu-fold"></iconpark-icon></button>
+    <div class="text-2xl font-bold"><a class="text-gray-100" href="admin-home.html" id="admin-logo" th:href="@{admin-home}">毕业生就业信息管理系统</a>
+    </div>
+    <div class="relative">
+        <img alt="Avatar" class="h-10 w-10 rounded-full cursor-pointer" id="avatar"
+             src="../static/img/tile.png" th:src="@{~/img/tile.png}">
+        <div class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 dropdown-menu z-10 hidden" id="dropdown">
+            <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-500 hover:text-white" href="#">个人中心</a>
+            <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-500 hover:text-white" href="#">修改密码</a>
+            <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-500 hover:text-white" href="#">系统设置</a>
+            <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-500 hover:text-white" href="#">登出</a>
+        </div>
+    </div>
+</header>
+<div class="flex">
+    <nav class="w-64 bg-gray-200 min-h-screen p-6 border-y-lime-300"  id="nav">
+        <ul>
+            <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#" id="1" onclick="action(1)" th:onclick="action(1)">毕业生基本信息</a></li>
+            <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#" onclick="action(2)" th:onclick="action(2)">毕业生就业信息</a></li>
+            <li>
+                <a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#">就业信息审核 <span
+                        class="float-right"><iconpark-icon name="drop-left"></iconpark-icon></span></a>
+                <ul class="pl-4 hidden">
+                    <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#">未审核</a></li>
+                    <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#">审核完成</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#">汇总与统计 <span
+                        class="float-right"><iconpark-icon name="drop-left"></iconpark-icon></span></a>
+                <ul class="pl-4 hidden">
+                    <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white"
+                           href="#">就业信息一览表(院系)</a>
+                    </li>
+                    <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white"
+                           href="#">就业信息一览表(专业)</a>
+                    </li>
+                    <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white"
+                           href="#">就业信息统计表<br/>(签约单位类别)</a>
+                    </li>
+                    <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white"
+                           href="#">就业信息统计表<br/>(签约单位所在地)</a>
+                    </li>
+                    <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white"
+                           href="#">就业情况统计表</a></li>
+                </ul>
+            </li>
+            <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#" onclick="action(3)" th:onclick="action(3)">初始账号密码分配</a>
+            </li>
+            <li class="hidden" id="admin-nav"><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white"
+                                                 href="#">各院系就业工作负责人信息</a>
+            </li>
+            <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#">就业相关资讯推送</a>
+            </li>
+            <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#">系统管理 <span
+                    class="float-right"><iconpark-icon name="drop-left"></iconpark-icon></span></a>
+                <ul class="pl-4 hidden">
+                    <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#">个人中心</a>
+                    </li>
+                    <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#">操作日志</a>
+                    </li>
+                    <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#">设置</a></li>
+                    <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#">修改密码</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a class="block w-52 py-1 text-gray-900 hover:bg-green-500 hover:text-white" href="#">登出</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="absolute w-3/4 mt-6 ml-12" style="height: 70%" id="content">
+            <!-- 主要内容区 -->
+        </section>
+    </main>
+</div>
+<script src="../static/js/jquery.min.js" th:src="@{~/js/jquery.min.js}"></script>
+<script src="../static/js/admin.main.js" th:src="@{~/js/admin.main.js}"></script>
+<script src="../static/js/test.js" th:src="@{~/js/test.js}"></script></body>
+</html>
